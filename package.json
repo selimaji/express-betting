@@ -4,27 +4,14 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon  ./src/server/server.js",
-    "start": "prisma db push && node ./src/index",
+    "dev": "node server/server.js",
+    "start": "node server/server.js",
     "mongo-start": "docker run -d -p 27017-27019:27017-27019 --name mongo-dev adaptable/mongo-replica-set",
     "mongo-stop": "docker rm -f mongo-dev"
   },
   "dependencies": {
-    "@prisma/client": "^3.14.0",
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "dotenv": "^16.0.1",
-    "morgan": "~1.9.1",
-    "prisma": "^3.14.0",
-    "sanitize-html": "^2.7.0",
     "express": "^4.18.2",
     "socket.io": "^4.7.2",
     "ws": "^8.14.2"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.16"
-  },
-  "nodemonConfig": {
-    "ext": "js,mjs,json,css,html"
   }
 }
